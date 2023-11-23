@@ -48,13 +48,6 @@ font.addEventListener("click", () => {
   nav.classList.remove("active");
   logoIn.classList.remove("active");
 });
-card.addEventListener("touchmove", (e) => {
-  e.preventDefault();
-  let touch = e.touches[0];
-  let xAxis = (window.innerWidth / 2 - touch.pageX) / 25;
-  let yAxis = (window.innerHeight / 2 - touch.pageY) / -25;
-  card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
-});
 card.addEventListener("mousemove", (e) => {
   let xAxis = (window.innerWidth / 2 - e.pageX) / 25;
   let yAxis = (window.innerHeight / 2 - e.pageY) / -25;
