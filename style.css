@@ -537,4 +537,9 @@ li:hover::before {
     bottom: auto;
     top: 540px;
   }
+  .aPropos,
+  .competences,
+  .projets {
+    height: 500px;
+  }
 }
