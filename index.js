@@ -49,6 +49,7 @@ font.addEventListener("click", () => {
   logoIn.classList.remove("active");
 });
 card.addEventListener("touchmove", (e) => {
+  e.preventDefault();
   let touch = e.touches[0];
   let xAxis = (window.innerWidth / 2 - touch.pageX) / 25;
   let yAxis = (window.innerHeight / 2 - touch.pageY) / -25;
