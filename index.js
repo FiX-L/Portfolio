@@ -67,29 +67,7 @@ window.addEventListener("mousemove", (e) => {
   card.style.setProperty("--y", e.layerY + "px");
 });
 
-function backgroundColor() {
-  if (window.innerWidth >= 1230) {
-    p1.style.backgroundColor = "#5effea";
-    p2.style.backgroundColor = "#5effea";
-  }
-}
-
-function changeBackgroundColor() {
-  if (window.innerWidth >= 1230) {
-    p1.style.backgroundColor = "#5effea";
-    p2.style.backgroundColor = "#5effea";
-  } else {
-    p1.style.backgroundColor = "";
-    p2.style.backgroundColor = "";
-  }
-}
-window.addEventListener("resize", changeBackgroundColor);
-
 tousProjets.addEventListener("scroll", () => {
-  console.log(tousProjets.scrollHeight);
-  console.log(tousProjets.scrollHeight - tousProjets.scrollTop);
-  console.log(tousProjets.scrollTop);
-
   if (tousProjets.scrollTop > 260) {
     p2.style.backgroundColor = "#5effea";
     p1.style.backgroundColor = "transparent";
@@ -99,13 +77,43 @@ tousProjets.addEventListener("scroll", () => {
   }
 });
 
+window.addEventListener("resize", () => {
+  if (window.innerWidth >= 1230) {
+    p1.style.backgroundColor = "#5effea";
+    p2.style.backgroundColor = "#5effea";
+  } else {
+    p1.style.backgroundColor = "";
+    p2.style.backgroundColor = "";
+  }
+});
+
+p1.addEventListener("click", () => {
+  if (window.innerWidth <= 1230) {
+    p1.style.backgroundColor = "#5effea";
+    p2.style.backgroundColor = "transparent";
+    tousProjets.scrollTop = 0;
+  } else {
+    p1.style.backgroundColor = "#5effea";
+    p2.style.backgroundColor = "#5effea";
+  }
+});
+p2.addEventListener("click", () => {
+  if (window.innerWidth <= 1230) {
+    p2.style.backgroundColor = "#5effea";
+    p1.style.backgroundColor = "transparent";
+    tousProjets.scrollTop = 520;
+  } else {
+    p1.style.backgroundColor = "#5effea";
+    p2.style.backgroundColor = "#5effea";
+  }
+});
+
 const bouton = document.querySelector(".croix-toggle");
 const nav = document.querySelector(".liste");
 const logoIn = document.querySelector(".logoIn");
 const fontChoix = document.querySelector(".font-choix");
 
 bouton.addEventListener("click", () => {
-  console.log("hello");
   nav.classList.toggle("active");
   logoIn.classList.toggle("active");
   fontChoix.classList.toggle("active");
